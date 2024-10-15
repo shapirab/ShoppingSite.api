@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShoppingSite.api.Data;
+using ShoppingSite.api.Data.Services.Interfaces;
+using ShoppingSite.api.Data.Services.SqlImplementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration["ConnectionStrings:ShoppingAppDB"]));
+
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
