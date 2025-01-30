@@ -8,6 +8,7 @@ namespace ShoppingSite.api.Data.Services.Interfaces
         Task<(IEnumerable<UserEntity>, PaginationMetaData)> GetAllUsersAsync
             (string? name, bool? isAdmin, string? searchQuery, int pageNumber, int pageSize);
         Task<UserEntity?> GetUserByIdAsync(int id);
+        Task<UserEntity?> GetUserBySub(string sub);
         Task AddUserAsync(UserEntity userEntity);
         Task DeleteUserAsync(int userId);
         Task<bool> IsUserExistsAsync(int userId);

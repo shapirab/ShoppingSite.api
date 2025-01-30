@@ -56,6 +56,11 @@ namespace ShoppingSite.api.Data.Services.SqlImplementations
             return await db.Users.Where(user => user.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<UserEntity?> GetUserBySub(string sub)
+        {
+            return await db.Users.Where(user => user.Sub.Equals(sub)).FirstOrDefaultAsync();
+        }
+
         public async Task AddUserAsync(UserEntity userEntity)
         {
             await db.Users.AddAsync(userEntity);
@@ -79,5 +84,7 @@ namespace ShoppingSite.api.Data.Services.SqlImplementations
         {
             return await db.SaveChangesAsync() >= 0;
         }
+
+        
     }
 }

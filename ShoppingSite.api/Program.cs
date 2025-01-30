@@ -28,6 +28,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.Use(async (context, next) => { 
+    context.Response.Headers.Append("Referrer-Policy", "no-referrer"); 
+    await next(); 
+});
+
+app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

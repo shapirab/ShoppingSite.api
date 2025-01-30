@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ShoppingSite.api.Data.DataModels.DTO;
 using ShoppingSite.api.Data.DataModels.Entity;
 using ShoppingSite.api.Data.DataModels.Model;
 using ShoppingSite.api.Data.Services.Interfaces;
@@ -12,6 +13,8 @@ namespace ShoppingSite.api.Profiles
         {
             CreateMap<UserEntity, User>();
             CreateMap<User, UserEntity>();
+            CreateMap<UserEntity, UserDTO>();
+            CreateMap<UserDTO, UserEntity>();
         }
     }
 }
