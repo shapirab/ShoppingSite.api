@@ -5,8 +5,10 @@ namespace ShoppingSite.api.Data
 {
     public class DataContext : DbContext
     {
-        public DbSet<UserEntity> Users { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        
+        public DbSet<UserEntity> Users { get; set; }
+        public DbSet<ProductEntity> Products { get; set; }
     }
 }

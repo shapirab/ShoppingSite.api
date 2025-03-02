@@ -15,6 +15,11 @@ namespace ShoppingSite.api.Profiles
             CreateMap<User, UserEntity>();
             CreateMap<UserEntity, UserDTO>();
             CreateMap<UserDTO, UserEntity>();
+
+            CreateMap<ProductEntity, Product>();
+            CreateMap<Product, ProductEntity>();
+            CreateMap<ProductEntity, ProductDto>();
+            CreateMap<ProductDto, ProductEntity>();
         }
     }
 }
